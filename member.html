@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070707">
+<meta name="description" content="칠죄종 멤버 상세 기록">
+<title>칠죄종 — MEMBER FILE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="detail-page">
+<div class="noise"></div>
+<div class="cursor-glow"></div>
+<header class="topbar">
+  <a class="brand" href="index.html#members" aria-label="멤버 목록으로">
+    <span class="brand-mark">Ⅶ</span>
+    <span><b>칠죄종</b><small>THE SEVEN SINS</small></span>
+  </a>
+  <nav><a href="index.html#about">ORGANIZATION</a><a href="index.html#sins">THE SEVEN</a><a href="index.html#members">MEMBERS</a></nav>
+</header>
+<main id="detailRoot"></main>
+<script src="script.js"></script>
+<script>
+const root=document.getElementById('detailRoot');
+const params=new URLSearchParams(location.search); const id=params.get('id')||'01';
+const m=members.find(x=>x.n===id)||members[0];
+const idx=members.findIndex(x=>x.n===m.n);
+const prev=members[(idx-1+members.length)%members.length], next=members[(idx+1)%members.length];
+root.innerHTML=`
+<section class="detail-hero">
+  <div class="detail-visual"><img src="${m.img}" alt="${m.name} 공식 일러스트"><div class="detail-vignette"></div><div class="detail-number">${m.n}<span>/ 07</span></div></div>
+  <div class="detail-copy">
+    <a class="back-link" href="index.html#members">← BACK TO MEMBERS</a>
+    <span class="detail-kicker">MEMBER FILE · ${m.sin.split(' · ')[1]}</span>
+    <h1>${m.name}</h1><p class="detail-en">${m.en}</p>
+    <div class="detail-divider"></div>
+    <p class="detail-role">${m.role}</p>
+    <div class="dossier">
+      ${m.details.map(d=>`<div class="dossier-row"><b>${d[0]}</b><span>${d[1]}</span></div>`).join('')}
+    </div>
+    <blockquote>“${m.quote}”</blockquote>
+  </div>
+</section>
+<section class="detail-bottom">
+  <div class="detail-label">SEVEN SINS / ${m.n}</div>
+  <div class="detail-nav"><a href="member.html?id=${prev.n}">← ${prev.name}<small>${prev.sin.split(' · ')[0]}</small></a><a href="index.html#members" class="all-members">ALL MEMBERS</a><a href="member.html?id=${next.n}">${next.name} →<small>${next.sin.split(' · ')[0]}</small></a></div>
+</section>`;
+
+document.title=`${m.name} — 칠죄종`;
+</script>
+</body>
+</html>
