@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070707" />
+  <meta name="description" content="칠죄종 — 7대 죄악의 죄명을 코드네임으로 사용하는 마피아 집단의 공식 소개 사이트." />
+  <title>칠죄종 — THE SEVEN SINS</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="cursor-glow"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="칠죄종 홈">
+      <span class="brand-mark">Ⅶ</span>
+      <span><b>칠죄종</b><small>THE SEVEN SINS</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav id="siteNav">
+      <a href="#about">ORGANIZATION</a>
+      <a href="#sins">THE SEVEN</a>
+      <a href="#members">MEMBERS</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-image"><img src="assets/group-banner.jpg" alt="칠죄종 단체 배너"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">ORGANIZATION FILE · 07</p>
+        <h1>칠죄종</h1>
+        <p class="hero-en">THE SEVEN SINS</p>
+        <p class="hero-copy">7대 죄악의 죄명을 코드네임으로 사용하는 마피아 집단.</p>
+        <a class="enter" href="#about"><span>ACCESS THE ORGANIZATION</span><i>↓</i></a>
+      </div>
+      <div class="hero-seal">VII<br><small>SINS</small></div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="section-head"><span>01 / FILE</span><h2>THE ORGANIZATION</h2></div>
+      <div class="about-grid">
+        <div class="about-title"><p class="kicker">SEVEN SINS · ONE ORGANIZATION</p><h3>죄를 숨기지 않는다.<br><em>죄를 이름으로 삼는다.</em></h3></div>
+        <div class="about-copy">
+          <p>인간의 마음 가장 깊은 곳에 자리한 일곱 가지 욕망. 칠죄종은 그 죄악의 이름을 코드네임으로 삼은 조직이다.</p>
+          <p>각자의 방식으로 욕망하고, 각자의 방식으로 조직을 지킨다. 메디컬부터 정보상, 협상가, 현장 처리반, 해커까지 일곱 개의 역할은 서로 다른 죄의 형태로 완성된다.</p>
+          <div class="rule"><span>ACCESS LEVEL</span><b>SEVEN</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sins" class="section sins">
+      <div class="section-head"><span>02 / SYMBOLS</span><h2>THE SEVEN</h2></div>
+      <div class="sins-grid">
+        <article><b>PRIDE</b><span>오만</span><small>왕관 · 호랑이</small></article>
+        <article><b>WRATH</b><span>분노</span><small>지포라이터 · 곰</small></article>
+        <article><b>LUST</b><span>색욕</span><small>향수 · 공작</small></article>
+        <article><b>GLUTTONY</b><span>식욕</span><small>성배 · 악어</small></article>
+        <article><b>JEALOUSY</b><span>질투</span><small>시든 꽃 · 뱀</small></article>
+        <article><b>GREED</b><span>탐욕</span><small>외알 안경 · 독수리</small></article>
+        <article><b>SLOTH</b><span>나태</span><small>멈춘 모래시계 · 고양이</small></article>
+      </div>
+    </section>
+
+    <section id="members" class="section members">
+      <div class="section-head"><span>03 / PERSONNEL</span><h2>THE MEMBERS</h2></div>
+      <div id="memberGrid" class="member-grid"></div>
+    </section>
+
+    <section class="quote-section">
+      <div class="quote-mark">“</div>
+      <p>때론 실체보단 미미하게 남은 한줄기의 잔향이 더 끌리는 법.</p>
+      <span>— THE SEVEN SINS</span>
+    </section>
+
+    <footer>
+      <div><strong>칠죄종</strong><span>THE SEVEN SINS</span></div>
+      <p>SEVEN SINS · ONE ORGANIZATION</p>
+    </footer>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button class="modal-close" data-close aria-label="닫기">×</button>
+      <div class="modal-image"><img id="modalImage" src="" alt=""></div>
+      <div class="modal-info">
+        <span id="modalSin" class="modal-sin"></span>
+        <h2 id="modalName"></h2>
+        <p id="modalRole" class="modal-role"></p>
+        <div class="detail-lines" id="modalDetails"></div>
+        <blockquote id="modalQuote"></blockquote>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
